@@ -200,26 +200,21 @@ npm run type-check   # TypeScript check (no emit)
 | `/quote` | Quick Quote |
 | `/privacy` | Privacy Policy |
 | `/terms` | Terms of Service |
+| `/cookies` | Cookie Policy |
 
 ---
 
 ## Deployment
 
-The project is configured for zero-config Vercel deployment.
+The project is configured for zero-config Vercel deployment and is currently securely hosted in a private GitHub repository (`cristborrero/levelone-agency-v3`). 
 
-```bash
-# Install Vercel CLI
-npm i -g vercel
+Pushes to the `main` branch automatically trigger a production build in Vercel.
 
-# Deploy
-vercel
+**Environment variables required in Vercel:**
+- `NEXT_PUBLIC_SITE_URL` = `https://leveloneagency.co.uk`
+- `RESEND_API_KEY` = `re_xxxxxxxxxxxx`
 
-# Set production env vars in Vercel dashboard:
-# NEXT_PUBLIC_SITE_URL=https://leveloneagency.co.uk
-# RESEND_API_KEY=re_xxxxxxxxxxxx
-```
-
-Connect `leveloneagency.co.uk` in the Vercel dashboard under **Domains**.
+Connect `leveloneagency.co.uk` in the Vercel dashboard under **Domains** and point your DNS records to Vercel.
 
 ---
 
