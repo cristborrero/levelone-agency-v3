@@ -49,15 +49,15 @@ export default function PrivacyPage() {
             },
             {
               title: "5. Data Retention",
-              content: "Enquiry data is retained for up to 2 years. Client project data is retained for 6 years for tax and legal purposes. You may request deletion at any time, subject to legal obligations.",
+              content: "Enquiry data is retained for up to 2 years. Client project data is retained for 6 years for tax and legal purposes. You may request deletion at any time, subject to legal obligations. Newsletter subscribers: retained until unsubscribe + 30 days.",
             },
             {
-              title: "6. Third-Party Services",
-              content: "We use Vercel (website hosting), Resend (transactional email), and Vercel Analytics (privacy-compliant, no cookies). These services may process data on our behalf.",
+              title: "6. International Transfers",
+              content: "Vercel Inc. and Resend Inc. are based in the USA. Data transfers are governed by the International Data Transfer Agreement (IDTA). We have conducted a Transfer Risk Assessment (TRA) confirming that protections offered are not materially inferior to UK standards, as required by the DUAA 2025.",
             },
             {
               title: "7. Your Rights",
-              content: "Under UK GDPR, you have the right to access, correct, delete, restrict, or port your personal data, and to object to processing. Contact us at hello@leveloneagency.co.uk. You may also lodge a complaint with the ICO at ico.org.uk.",
+              content: "Under UK GDPR, you have the right to access, correct, delete, restrict, or port your personal data, and to object to processing. Contact us at hello@leveloneagency.co.uk. You may also lodge a complaint with the ICO at ico.org.uk. We will respond to all requests within 30 days. Under the DUAA 2025, we may request additional information to verify your identity or clarify the scope of your request, which may pause the response timeline. We are only required to conduct searches that are reasonable and proportionate.",
             },
             {
               title: "8. Cookies",
