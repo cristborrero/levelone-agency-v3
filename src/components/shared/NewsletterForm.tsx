@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import Link from "next/link";
 
 export function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -62,6 +63,23 @@ export function NewsletterForm() {
           )}
         </button>
       </div>
+      <label className="mt-1 flex items-start gap-2.5 font-body text-[11px] leading-tight text-brand-grey-500 cursor-pointer">
+        <input
+          type="checkbox"
+          required
+          disabled={status === "submitting" || status === "success"}
+          className="mt-0.5 h-3.5 w-3.5 shrink-0 appearance-none border border-brand-grey-700/60 bg-transparent transition-colors duration-200 checked:bg-brand-accent checked:border-brand-accent flex items-center justify-center relative after:absolute after:hidden checked:after:block after:content-[''] after:w-1 after:h-2 after:border-r-[1.5px] after:border-b-[1.5px] after:border-brand-black after:rotate-45 after:-translate-y-0.5"
+        />
+        <span>
+          I agree to receive the monthly LevelOne digest. I can unsubscribe at any time. See our{" "}
+          <Link
+            href="/privacy"
+            className="text-brand-grey-300 underline decoration-brand-grey-700/50 underline-offset-2 transition-colors hover:text-brand-accent hover:decoration-brand-accent"
+          >
+            Privacy Policy
+          </Link>.
+        </span>
+      </label>
       {status === "error" && (
         <p className="font-mono text-[10px] text-brand-error">
           Something went wrong. Please try again.
