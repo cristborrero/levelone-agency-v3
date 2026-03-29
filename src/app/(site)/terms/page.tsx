@@ -23,50 +23,56 @@ export default function TermsPage() {
         </div>
 
         <div className="space-y-10 font-body text-sm leading-relaxed text-brand-grey-300">
-          <p>
-            These terms govern the provision of services by Leonardo Martinez
-            Mena trading as LevelOne Agency (&ldquo;LevelOne&rdquo;,
-            &ldquo;we&rdquo;, &ldquo;us&rdquo;) to clients (&ldquo;you&rdquo;,
-            &ldquo;the client&rdquo;). By engaging our services, you agree to
-            these terms.
-          </p>
-
           {[
             {
-              title: "1. Services",
-              content: "We provide digital agency services including web design and development, brand identity, digital marketing, and AI solutions. The specific scope, deliverables, timeline, and fees for each engagement are agreed in writing before work begins.",
+              title: "1. WHO WE ARE",
+              content:
+                "LevelOne Agency is a trading name of Leonardo Martinez Mena, registered address: Flat 5, Wayewood Lodge, Branksome Park Road, Camberley, GU15 2AE, United Kingdom. Email: hello@leveloneagency.co.uk. These terms govern all services provided by LevelOne Agency to clients.",
             },
             {
-              title: "2. Payment Terms",
-              content: "Projects are typically invoiced with a 50% deposit before work begins and the balance upon completion or at agreed milestones. Invoices are due within 14 days of issue unless otherwise agreed. Late payments may incur interest under the Late Payment of Commercial Debts (Interest) Act 1998.",
+              title: "2. SERVICES AND SCOPE OF WORK",
+              content:
+                "All projects are defined in a written Statement of Work (SOW) or project proposal agreed by both parties before work begins. Any request outside the agreed scope constitutes a Change Request and is subject to a separate quote. The price shown in any proposal includes all mandatory charges \u2014 there are no hidden fees added after agreement (in compliance with the DMCC Act 2024).",
             },
             {
-              title: "3. Client Responsibilities",
-              content: "Clients are responsible for providing accurate briefs, timely feedback, and any required content, assets, or access credentials. Delays caused by the client may affect delivery timelines and additional costs may apply.",
+              title: "3. FIXED-PRICE PROJECTS",
+              content:
+                "Project fees are fixed as stated in the SOW. Payment terms: 50% deposit upon project commencement, 50% upon delivery, unless otherwise agreed in writing. Invoices are due within 14 days of issue.",
             },
             {
-              title: "4. Intellectual Property",
-              content: "Upon receipt of full payment, ownership of final deliverables transfers to the client. Working files, code libraries, and proprietary tools remain the property of LevelOne unless otherwise agreed in writing. LevelOne reserves the right to display completed work in its portfolio unless the client requests otherwise in writing.",
+              title: "4. INTELLECTUAL PROPERTY",
+              content:
+                "All deliverables (code, designs, content, brand assets) remain the intellectual property of LevelOne Agency until full payment is received. Upon full payment, all rights are transferred to the client. LevelOne Agency retains the right to display completed work in its portfolio unless the client requests otherwise in writing.",
             },
             {
-              title: "5. Confidentiality",
-              content: "Both parties agree to keep confidential any proprietary information shared during the engagement. This obligation continues for 2 years after project completion.",
+              title: "5. AI-ASSISTED SERVICES",
+              content:
+                "LevelOne Agency uses AI tools to assist in delivery. All AI-generated outputs are reviewed and validated by our team before delivery. The client is responsible for reviewing all deliverables before use in production or public-facing communications. LevelOne Agency does not guarantee specific outcomes from AI workflows or automation systems.",
             },
             {
-              title: "6. Liability",
-              content: "Our total liability in connection with any project shall not exceed the fees paid by the client for that project. We are not liable for indirect, consequential, or loss-of-profit damages. We do not guarantee specific business outcomes from our work.",
+              title: "6. CLIENT RESPONSIBILITIES",
+              content:
+                "The client agrees to provide timely feedback, content, and approvals as required. Delays caused by the client may affect delivery timelines. LevelOne Agency is not liable for delays resulting from late client input.",
             },
             {
-              title: "7. Cancellation",
-              content: "Either party may cancel a project with 14 days' written notice. The client is liable for payment of all work completed to the cancellation date. Deposits are non-refundable once work has begun.",
+              title: "7. RETAINER AND SUBSCRIPTION SERVICES",
+              content:
+                "For ongoing monthly retainers: clients receive a renewal reminder every 6 months. Clients may cancel with 30 days' written notice. A 14-day cooling-off period applies from the start of any new subscription or upon transition from a trial to a paid plan, during which a full refund will be issued upon written request to hello@leveloneagency.co.uk. (Compliant with DMCC Act 2024 subscription provisions, Spring 2026.)",
             },
             {
-              title: "8. Governing Law",
-              content: "These terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.",
+              title: "8. REVIEWS AND TESTIMONIALS",
+              content:
+                "Any testimonials or case studies published by LevelOne Agency reflect genuine client experiences. We do not commission, incentivise, or publish fabricated reviews. (Compliant with DMCC Act 2024.)",
             },
             {
-              title: "9. Contact",
-              content: "Leonardo Martinez Mena t/a LevelOne Agency. Flat 5, Wayewood Lodge, Branksome Park Road, Camberley, GU15 2AE, United Kingdom. hello@leveloneagency.co.uk",
+              title: "9. LIMITATION OF LIABILITY",
+              content:
+                "LevelOne Agency's total liability shall not exceed the total fees paid by the client for the specific project in question. We are not liable for indirect, consequential, or reputational losses.",
+            },
+            {
+              title: "10. GOVERNING LAW",
+              content:
+                "These terms are governed by the laws of England and Wales. Disputes will be resolved through mediation before any court proceedings.",
             },
           ].map((section) => (
             <div key={section.title}>
