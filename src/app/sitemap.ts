@@ -1,8 +1,17 @@
 import type { MetadataRoute } from "next";
+import { groq } from "next-sanity";
+import { createClient } from "next-sanity";
 
 const BASE = "https://leveloneagency.co.uk";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const SITEMAP_POSTS_QUERY = groq`
+  *[_type == "post" && defined(publishedAt)] | order(publishedAt desc) {
+    "slug": slug.current,
+    "lastModified": _updatedAt
+  }
+`;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date().toISOString();
 
   const staticRoutes = [
@@ -35,5 +44,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...caseStudies];
+  // Fetch dynamic insight posts from Sanity
+  let insightEntries: MetadataRoute.Sitemap = [];
+  try {
+    const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+    const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+    if (projectId && dataset) {
+      const sitemapClient = createClient({
+        projectId,
+        dataset,
+        apiVersion: "2026-03-30",
+        useCdn: true,
+      });
+      const posts: Array<{ slug: string; lastModified: string }> =
+        await sitemapClient.fetch(SITEMAP_POSTS_QUERY);
+
+      insightEntries = posts.map((post) => ({
+        url: `${BASE}/insights/${post.slug}`,
+        lastModified: post.lastModified,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      }));
+    }
+  } catch {
+    // Silently fail — static sitemap still works without Sanity
+  }
+
+  return [...staticRoutes, ...caseStudies, ...insightEntries];
 }
