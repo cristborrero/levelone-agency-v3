@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -14,6 +15,9 @@ const contactSchema = z.object({
   service: z.string().min(1, "Please select a service"),
   budget: z.string().min(1, "Please select a budget range"),
   message: z.string().min(20, "Please tell us a bit more about your project"),
+  consent: z.literal(true, {
+    errorMap: () => ({ message: "You must agree to our privacy policy to continue" }),
+  }),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -179,6 +183,26 @@ export function ContactForm() {
               {...register("message")}
             />
             {errors.message && <p className={errorClass}>{errors.message.message}</p>}
+          </div>
+
+          <div>
+            <label className="flex items-start gap-3 font-body text-xs leading-relaxed text-brand-grey-500 cursor-pointer">
+              <input
+                type="checkbox"
+                className="mt-0.5 h-4 w-4 shrink-0 appearance-none border border-brand-grey-700/60 bg-transparent transition-colors duration-200 checked:bg-brand-accent checked:border-brand-accent flex items-center justify-center relative after:absolute after:hidden checked:after:block after:content-[''] after:w-1 after:h-2 after:border-r-[1.5px] after:border-b-[1.5px] after:border-brand-black after:rotate-45 after:-translate-y-0.5"
+                {...register("consent")}
+              />
+              <span>
+                I agree to the processing of my personal data for the purpose of handling this enquiry, subject to the{" "}
+                <Link
+                  href="/privacy"
+                  className="text-brand-grey-300 underline decoration-brand-grey-700/50 underline-offset-2 transition-colors hover:text-brand-accent hover:decoration-brand-accent"
+                >
+                  Privacy Policy
+                </Link>.
+              </span>
+            </label>
+            {errors.consent && <p className={errorClass}>{errors.consent.message}</p>}
           </div>
 
           {status === "error" && (
