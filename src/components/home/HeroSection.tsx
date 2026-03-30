@@ -170,7 +170,7 @@ export function HeroSection() {
         >
           <span>✓ 15+ Years Combined Experience <span className="hidden sm:inline lg:hidden">•</span> Senior-Only Team</span>
           <span className="hidden px-3 text-brand-grey-700/50 lg:inline">•</span>
-          <span>🌍 International Portfolio <span className="hidden sm:inline lg:hidden">•</span> UK, USA, Spain, Costa Rica</span>
+          <span>🌍 International Portfolio <span className="hidden sm:inline lg:hidden">•</span> UK, USA, Spain, LATAM</span>
           <span className="hidden px-3 text-brand-grey-700/50 lg:inline">•</span>
           <span>📍 Surrey-Based <span className="hidden sm:inline lg:hidden">•</span> hello@leveloneagency.co.uk</span>
         </motion.div>
