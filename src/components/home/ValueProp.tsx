@@ -1,32 +1,32 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Building2, Users, Cpu, Receipt } from "lucide-react";
+import { Building2, Star, Cpu, Receipt } from "lucide-react";
 
 const ADVANTAGES = [
   {
     icon: Building2,
-    title: "No London Office",
+    title: "Surrey-Based",
     description:
-      "Surrey-based, remote-first. Zero rent markup shows up in your quote, not ours.",
+      "No expensive London office means lower overhead \u2014 and those savings go directly to you. Same quality, smarter structure.",
   },
   {
-    icon: Users,
+    icon: Star,
     title: "Senior-Only Team",
     description:
-      "No junior handoffs. Every project is led by experienced strategists and developers.",
+      "Every project is handled by experienced professionals. No juniors learning on your budget, no layers of account managers.",
   },
   {
     icon: Cpu,
     title: "AI-Assisted Delivery",
     description:
-      "We use AI to accelerate production — not to replace craft. Speed without shortcuts.",
+      "We use modern AI tools to accelerate research, design iterations, and development \u2014 delivering faster without compromising quality.",
   },
   {
     icon: Receipt,
     title: "Fixed-Price Projects",
     description:
-      "Scoped, quoted, locked. You know the investment before we start. No hourly creep.",
+      "Clear scope, transparent pricing, no surprises. You know exactly what you're paying for before we start.",
   },
 ] as const;
 
@@ -47,14 +47,13 @@ export function ValueProp() {
             </span>
           </div>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-[-0.03em] text-brand-white">
-              WHY WE COST LESS
+            <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-[-0.03em] text-brand-white lg:min-w-[500px]">
+              THE LEVELONE
               <br />
-              <span className="text-brand-accent">NOT LESS GOOD.</span>
+              <span className="text-brand-accent">MODEL.</span>
             </h2>
-            <p className="max-w-sm font-body text-base leading-relaxed text-brand-grey-300 lg:text-right">
-              London agency quality without the London agency overhead. The
-              difference is structure — not skill.
+            <p className="max-w-sm font-body text-base leading-relaxed text-brand-grey-300 lg:text-right lg:mb-2">
+              Premium delivery without the London overhead. We've built a lean, senior-only team that delivers agency-grade work at a sustainable cost.
             </p>
           </div>
         </motion.div>
