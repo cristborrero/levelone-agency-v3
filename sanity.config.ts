@@ -11,8 +11,11 @@ import { resolve } from "./src/sanity/presentation/resolve";
 
 const SINGLETON_TYPES = new Set(["siteSettings"]);
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+if (!projectId) throw new Error("Missing NEXT_PUBLIC_SANITY_PROJECT_ID");
+
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+if (!dataset) throw new Error("Missing NEXT_PUBLIC_SANITY_DATASET");
 
 export default defineConfig({
   name: "levelone-studio",
@@ -24,9 +27,10 @@ export default defineConfig({
     structureTool({ structure }),
     presentationTool({
       previewUrl: {
-        previewMode: {
+        draftMode: {
           enable: "/api/draft-mode/enable",
         },
+        origin: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
       },
       resolve,
     }),
