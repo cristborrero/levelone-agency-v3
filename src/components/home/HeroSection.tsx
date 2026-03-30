@@ -160,12 +160,27 @@ export function HeroSection() {
           </Link>
         </motion.div>
 
+        {/* Trust Signals */}
+        <motion.div
+          custom={1.15}
+          initial="hidden"
+          animate="visible"
+          variants={FADE_UP}
+          className="mt-8 mb-12 lg:mb-0 flex flex-col items-center gap-2 text-center font-body text-sm font-normal leading-relaxed text-brand-grey-500 sm:items-start sm:text-left lg:flex-row lg:items-center lg:gap-0"
+        >
+          <span>✓ 15+ Years Combined Experience <span className="hidden sm:inline lg:hidden">•</span> Senior-Only Team</span>
+          <span className="hidden px-3 text-brand-grey-700/50 lg:inline">•</span>
+          <span>🌍 International Portfolio <span className="hidden sm:inline lg:hidden">•</span> UK, USA, Spain, Costa Rica</span>
+          <span className="hidden px-3 text-brand-grey-700/50 lg:inline">•</span>
+          <span>📍 Surrey-Based <span className="hidden sm:inline lg:hidden">•</span> hello@leveloneagency.co.uk</span>
+        </motion.div>
+
         {/* Stats */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 0.8 }}
-          className="mt-20 flex flex-wrap gap-10 border-t border-brand-grey-900/40 pt-8 lg:mt-28 lg:gap-16"
+          className="mt-12 flex flex-wrap gap-10 border-t border-brand-grey-900/40 pt-8 lg:mt-16 lg:gap-16"
         >
           {STATS.map((stat) => (
             <div key={stat.label} className="flex items-baseline gap-3">
