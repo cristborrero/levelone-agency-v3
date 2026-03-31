@@ -1,10 +1,8 @@
-"use client";
+// SIN "use client" al inicio
 
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { presentationTool } from "sanity/presentation";
-// Vision tool removed — requires React canary (useEffectEvent)
-// Use GROQ playground at sanity.io/manage instead
 import { schemaTypes } from "./src/sanity/schemas";
 import { structure } from "./src/sanity/structure";
 import { resolve } from "./src/sanity/presentation/resolve";
@@ -22,6 +20,7 @@ export default defineConfig({
   title: "LevelOne Agency",
   projectId,
   dataset,
+  basePath: "/studio",    // ← AÑADIR ESTO
 
   plugins: [
     structureTool({ structure }),
@@ -34,18 +33,15 @@ export default defineConfig({
       },
       resolve,
     }),
-
   ],
 
   schema: {
     types: schemaTypes,
-    // Block singletons from "New document" dialog
     templates: (templates) =>
       templates.filter(({ schemaType }) => !SINGLETON_TYPES.has(schemaType)),
   },
 
   document: {
-    // Restrict actions on singletons (no create, delete, duplicate)
     actions: (input, context) =>
       SINGLETON_TYPES.has(context.schemaType)
         ? input.filter(
