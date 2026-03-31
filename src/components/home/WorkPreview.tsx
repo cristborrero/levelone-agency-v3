@@ -9,47 +9,47 @@ import { ArrowUpRight } from "lucide-react";
 const PROJECTS = [
   {
     id: "01",
-    slug: "meridian-finance",
-    title: "Meridian Finance",
-    client: "Fintech · London",
-    category: "Web Design & Development",
-    year: "2026",
+    slug: "real-cd-espana",
+    title: "Real CD España",
+    client: "Sports Club · Honduras",
+    category: "Web Design & Brand Identity",
+    year: "2024",
     description:
-      "Full digital transformation for a London fintech. Headless CMS, real-time dashboards, brand identity built for institutional trust.",
-    result: "Client onboarding from 14 days → 2 days.",
-    tags: ["Next.js", "Supabase", "Branding"],
+      "Digital presence for one of Central America's most historic football clubs — dark, bold, built to match the prestige of a century-old institution.",
+    result: "Full digital identity for a national-level sports institution.",
+    tags: ["Web Design", "Brand", "UI/UX"],
     accentColor: "#D4FF00",
-    image: "/work/meridian-finance.png",
+    image: "/work/real-cd-espana.webp",
     gridSpan: "md:col-span-2 md:row-span-2",
   },
   {
     id: "02",
-    slug: "volta-energy",
-    title: "Volta Energy",
-    client: "CleanTech · Surrey",
-    category: "Brand Identity",
-    year: "2025",
+    slug: "toucan-photo-tours",
+    title: "Toucan Photo Tours",
+    client: "Eco-Tourism · Ecuador",
+    category: "Full Digital Build",
+    year: "2024",
     description:
-      "Complete visual identity for a sustainable energy startup — logo system, motion toolkit, and launch campaign.",
-    result: "£340K raised in seed round the month after launch.",
-    tags: ["Identity", "Motion", "Strategy"],
-    accentColor: "#3B82F6",
-    image: "/work/volta-energy.png",
+      "From zero to live — brand, website, and launch strategy for a nature photography tour operator targeting international clients.",
+    result: "Complete business launch from idea to live brand.",
+    tags: ["Branding", "Web Design", "Launch"],
+    accentColor: "#00C896",
+    image: "/work/toucan-photo-tours.webp",
     gridSpan: "md:col-span-1 md:row-span-2",
   },
   {
     id: "03",
-    slug: "novatech-ai",
-    title: "NovaTech AI",
-    client: "SaaS · Guildford",
-    category: "AI Solutions & Web App",
-    year: "2026",
+    slug: "carpimaster",
+    title: "Carpimaster",
+    client: "B2B Packaging · Spain",
+    category: "Web Redesign",
+    year: "2025",
     description:
-      "AI-powered customer support platform with real-time analytics — prototype to production in 8 weeks.",
-    result: "72% reduction in support ticket volume.",
-    tags: ["React", "AI", "Dashboard"],
-    accentColor: "#FFB800",
-    image: "/work/novatech-ai.png",
+      "Complete redesign for an established packaging manufacturer — replacing a slow, outdated site that was losing them B2B clients.",
+    result: "Modernised, fast, conversion-focused B2B presence.",
+    tags: ["WordPress", "Redesign", "B2B"],
+    accentColor: "#FF6B35",
+    image: "/work/carpimaster.webp",
     gridSpan: "md:col-span-1 md:row-span-2",
   },
 ] as const;
@@ -102,16 +102,16 @@ export function WorkPreview() {
               onMouseLeave={() => setHoveredId(null)}
               className={`group relative cursor-pointer overflow-hidden bg-brand-black ${project.gridSpan}`}
             >
-              {/* Project image as background */}
+              {/* Background image */}
               <div className="absolute inset-0 z-0">
                 <Image
                   src={project.image}
                   alt={`${project.title} — ${project.category}`}
                   fill
-                  className="object-cover opacity-30 transition-all duration-700 group-hover:opacity-50 group-hover:scale-105"
+                  className="object-cover opacity-40 transition-all duration-700 group-hover:opacity-60 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent" />
               </div>
 
               {/* Accent top bar */}

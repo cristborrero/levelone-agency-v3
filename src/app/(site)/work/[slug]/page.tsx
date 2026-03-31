@@ -1,147 +1,200 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
 const CASE_STUDIES = {
-  "meridian-finance": {
-    title: "Meridian Finance",
-    client: "Fintech · London",
-    category: "Web Design & Development",
-    year: "2026",
+  "real-cd-espana": {
+    title: "Real CD España",
+    client: "Sports Club · Honduras",
+    category: "Web Design & Brand Identity",
+    year: "2024",
     accentColor: "#D4FF00",
-    image: "/work/meridian-finance.png",
+    image: "/work/real-cd-espana.webp",
+    liveUrl: "https://realcdespana.com",
     brief:
-      "Meridian Finance needed to replace a legacy WordPress site that was actively losing them enterprise clients. Their onboarding process required 14 days of manual data entry, and their brand hadn't been updated since 2019. They came to us with a clear brief: make us look like we belong in the room with the big players — without the big-player budget.",
+      "Real Club Deportivo España is one of Central America's oldest and most celebrated football clubs — a national institution with over a century of history and a passionate fanbase across Honduras and the diaspora. Despite that legacy, their digital presence didn't reflect it. The brief was clear: build a site that matches the prestige of the club and gives fans a destination they're proud to share.",
     approach: [
       {
-        phase: "Discovery & Audit",
+        phase: "Design Direction",
         detail:
-          "Two-day deep dive into their existing customer journey. We identified 7 drop-off points in the onboarding flow and mapped out exactly where institutional clients were losing confidence.",
+          "The visual language needed to communicate tradition, pride, and modernity simultaneously. We built a dark, high-contrast design system using the club's identity colours — bold typography, sharp grid structure, and purposeful use of photography to let the club's history speak for itself.",
       },
       {
-        phase: "Design System",
+        phase: "UI & Component Design",
         detail:
-          "Built a complete design language — dark-mode by default, data-dense but clean. Every component designed to handle real financial data, not lorem ipsum.",
+          "Every section — hero, app download, news feed, ticketing — was designed as a standalone module built to scale as the club's digital presence grows. Mobile-first throughout, given the majority of the fanbase accesses via smartphone.",
       },
       {
-        phase: "Development",
+        phase: "App Integration",
         detail:
-          "Next.js 14 with Supabase for real-time dashboards. We built a headless CMS so their team could update compliance pages without touching code. Server-side rendering for instant page loads.",
+          "A central goal was driving downloads of the club's official mobile app. We designed dedicated app promotion sections with App Store and Google Play CTAs embedded naturally into the content flow — not treated as afterthought banners.",
       },
       {
-        phase: "Launch & Handover",
+        phase: "Performance & Handover",
         detail:
-          "Phased rollout over two weeks. Full documentation, team training, and 30-day post-launch support window included.",
+          "Optimised for fast load across variable connection speeds — a key requirement for a Central American audience. Full asset handover to the club's internal team with documentation for ongoing management.",
       },
     ],
     results: [
-      { metric: "14 → 2 days", label: "Client onboarding time" },
-      { metric: "340%", label: "Increase in qualified leads" },
-      { metric: "2.1s", label: "Average page load time" },
-      { metric: "£0", label: "Post-launch bug fixes (first 90 days)" },
+      { metric: "100+", label: "Years of history represented" },
+      { metric: "Mobile-first", label: "Design approach" },
+      { metric: "2 platforms", label: "App Store & Google Play" },
+      { metric: "Full handover", label: "Assets & documentation" },
     ],
     testimonial: {
       quote:
-        "LevelOne understood our sector from day one. They didn't just build us a website — they gave us a platform that our sales team actually wants to show clients.",
-      author: "James Whitfield",
-      role: "COO, Meridian Finance",
+        "The site finally looks like it belongs to a club of our stature. Our fans notice the difference — and so do our sponsors.",
+      author: "Communications Department",
+      role: "Real Club Deportivo España",
     },
-    stack: ["Next.js 14", "TypeScript", "Supabase", "Tailwind CSS", "Vercel", "Headless CMS"],
-    nextProject: { slug: "volta-energy", title: "Volta Energy" },
+    stack: ["HTML", "CSS", "JavaScript", "Responsive Design", "Figma", "App Store Integration"],
+    nextProject: { slug: "toucan-photo-tours", title: "Toucan Photo Tours" },
   },
-  "volta-energy": {
-    title: "Volta Energy",
-    client: "CleanTech · Surrey",
-    category: "Brand Identity",
+
+  "toucan-photo-tours": {
+    title: "Toucan Photo Tours",
+    client: "Eco-Tourism · Ecuador",
+    category: "Full Digital Build",
+    year: "2024",
+    accentColor: "#00C896",
+    image: "/work/toucan-photo-tours.webp",
+    liveUrl: "https://toucanphototours.com",
+    brief:
+      "Toucan Photo Tours didn't exist yet. The idea was a nature and wildlife photography tour operator based in Ecuador, targeting international travellers — primarily English-speaking photographers and adventure tourists looking for immersive experiences in South America's most biodiverse ecosystems. The engagement started with business strategy and ended with a live, operational brand and website.",
+    approach: [
+      {
+        phase: "Business Ideation & Strategy",
+        detail:
+          "We began before a single pixel was designed. That meant defining the business model, the target customer (international English-speaking photographers and eco-tourists), the tour offerings, pricing structure, route planning, and competitive positioning in the eco-tourism market.",
+      },
+      {
+        phase: "Brand Identity",
+        detail:
+          "Built from zero — name, logo, colour palette, typography, and brand personality. The identity needed to feel premium enough for international clients while remaining connected to the natural world it was selling. The result: a warm, nature-forward brand with enough sophistication to compete in the English-language eco-tourism market.",
+      },
+      {
+        phase: "Website Design & Development",
+        detail:
+          "A conversion-focused website showcasing tours, wildlife photography, and booking information. Designed with an English-speaking international audience as the primary user — clear CTAs driving enquiries, detailed tour pages, and a gallery that sells the experience before the client even reads the copy.",
+      },
+      {
+        phase: "Content, Copy & Photography Direction",
+        detail:
+          "Tour itineraries, route descriptions, wildlife guides, and photography tips — all written and structured to serve both SEO and the genuine curiosity of the target customer. Full photographic direction for hero and gallery sections.",
+      },
+    ],
+    results: [
+      { metric: "0 → live", label: "Business built from scratch" },
+      { metric: "Full brand", label: "Name, logo, identity, guidelines" },
+      { metric: "EN-first", label: "International audience targeting" },
+      { metric: "End-to-end", label: "Strategy through to launch" },
+    ],
+    testimonial: {
+      quote:
+        "We went from an idea to a fully operational business with a brand and website we're proud to show international clients. Everything was thought through — not just the design.",
+      author: "Founder",
+      role: "Toucan Photo Tours",
+    },
+    stack: ["WordPress", "Custom Theme", "Figma", "Copywriting", "Brand Design", "SEO"],
+    nextProject: { slug: "carpimaster", title: "Carpimaster" },
+  },
+
+  "carpimaster": {
+    title: "Carpimaster",
+    client: "B2B Packaging · Spain",
+    category: "Web Redesign",
     year: "2025",
-    accentColor: "#3B82F6",
-    image: "/work/volta-energy.png",
+    accentColor: "#FF6B35",
+    image: "/work/carpimaster.webp",
+    liveUrl: "https://carpimaster.com",
     brief:
-      "Volta Energy was a two-person cleantech startup with a breakthrough battery storage technology but no visual identity. They needed a brand that could hold its own in seed-round pitch decks alongside companies ten times their size — and a landing page that would convert investor traffic from their PR campaign.",
+      "Carpimaster manufactures high-quality branded packaging for businesses across Spain. The quality of their physical product is excellent — but their website told a completely different story. It was slow, visually dated, hard to navigate, and failing to convert the B2B clients they were attracting through sales and referrals. The site was actively costing them business. The brief: rebuild it properly.",
     approach: [
       {
-        phase: "Brand Strategy",
+        phase: "Audit & Diagnosis",
         detail:
-          "Competitive audit of 40+ cleantech brands globally. Identified that most competitors default to generic green gradients. We positioned Volta with a bolder, more architectural identity that signals engineering precision.",
+          "Before touching the design, we audited the existing site thoroughly — page speed, UX flow, content structure, and conversion pathways. The diagnosis: slow load times, no clear hierarchy, a product catalogue that buried the work, and a design that signalled 'small supplier' rather than 'serious manufacturer'.",
       },
       {
-        phase: "Visual Identity",
+        phase: "Full Visual Redesign",
         detail:
-          "Logo system with 6 responsive marks, full colour palette, typography scale, and iconography set. Everything documented in a 40-page brand guidelines PDF.",
+          "A complete visual rebuild — new layout system, updated colour application, professional typography, and a hero section that leads with the quality of the product. Every page redesigned with a B2B buyer in mind: someone who needs to quickly assess capability, trust the supplier, and find a way to get in touch.",
       },
       {
-        phase: "Motion Toolkit",
+        phase: "Performance Optimisation",
         detail:
-          "Animated logo reveals, social media templates with parallax effects, and a pitch deck with embedded motion graphics for investor presentations.",
+          "Rebuilt on an optimised WordPress stack. Image compression, caching configuration, and clean code reduced load times dramatically. A slow site signals an unreliable supplier — a fast one signals a professional operation.",
       },
       {
-        phase: "Landing Page",
+        phase: "Content & Catalogue Structure",
         detail:
-          "Single-page site designed for one goal: get investors to book a call. Built in Next.js with Calendly integration and full analytics tracking.",
+          "Restructured the product catalogue to showcase the range clearly. Improved the contact and quote request flow so that potential B2B clients could take action without friction.",
       },
     ],
     results: [
-      { metric: "£340K", label: "Raised in seed round (1 month)" },
-      { metric: "12%", label: "Landing page conversion rate" },
-      { metric: "3 weeks", label: "Total delivery time" },
-      { metric: "40 pages", label: "Brand guidelines document" },
+      { metric: "Full rebuild", label: "Design, content & structure" },
+      { metric: "Much faster", label: "Page load performance" },
+      { metric: "B2B-focused", label: "Conversion-oriented UX" },
+      { metric: "Self-managed", label: "Easy WordPress CMS" },
     ],
     testimonial: {
       quote:
-        "We walked into our seed pitch with the confidence of a Series B company. The brand LevelOne built gave us instant credibility.",
-      author: "Dr. Amara Osei",
-      role: "Founder, Volta Energy",
+        "The difference is night and day. We now send clients to our website with confidence — before, we almost hoped they wouldn't look it up.",
+      author: "Management Team",
+      role: "Carpimaster",
     },
-    stack: ["Figma", "After Effects", "Next.js", "Calendly API", "Google Analytics"],
-    nextProject: { slug: "novatech-ai", title: "NovaTech AI" },
+    stack: ["WordPress", "Custom Theme", "Figma", "Performance Optimisation", "SEO", "Copywriting"],
+    nextProject: { slug: "coldfrank", title: "Coldfrank" },
   },
-  "novatech-ai": {
-    title: "NovaTech AI",
-    client: "SaaS · Guildford",
-    category: "AI Solutions & Web App",
-    year: "2026",
-    accentColor: "#FFB800",
-    image: "/work/novatech-ai.png",
+
+  "coldfrank": {
+    title: "Coldfrank",
+    client: "Fashion E-commerce · Spain",
+    category: "E-commerce Optimisation",
+    year: "2024",
+    accentColor: "#3B82F6",
+    image: "/work/coldfrank.webp",
+    liveUrl: "https://coldfrank.com",
     brief:
-      "NovaTech was drowning in support tickets. Their 4-person support team was handling 200+ tickets a day, and response times had ballooned to 48 hours. They needed an AI-powered triage and response system that could handle tier-1 queries automatically while routing complex issues to the right specialist — and they needed it live in 8 weeks.",
+      "Coldfrank is a Spanish streetwear brand manufacturing hoodies, jackets, and knitwear locally. Their store was live and making sales — but it had accumulated security vulnerabilities, performance debt, and had no systematic approach to converting visitors into buyers. Revenue was below what the brand's quality warranted. The engagement covered three areas: security, performance, and active conversion strategy.",
     approach: [
       {
-        phase: "Technical Discovery",
+        phase: "Security Audit & Hardening",
         detail:
-          "Analysed 6 months of ticket data to identify the 80/20 — 78% of support tickets fell into 12 categories that could be automated with high confidence.",
+          "A thorough security audit identified multiple vulnerabilities across the store's codebase and plugin stack. We resolved each one systematically — patching exploits, hardening authentication, updating dependencies, and implementing ongoing monitoring. An unsecured store is a liability for both the brand and its customers.",
       },
       {
-        phase: "AI Architecture",
+        phase: "Performance Optimisation",
         detail:
-          "Built a hybrid system: fine-tuned language model for intent classification, combined with a knowledge-base retrieval system for generating responses grounded in their actual documentation.",
+          "Audit of page speed across product pages, collection pages, and checkout. Image optimisation, script deferral, and caching improvements reduced load times and improved the overall shopping experience — particularly on mobile, where the majority of traffic arrived.",
       },
       {
-        phase: "Dashboard & Analytics",
+        phase: "Conversion Campaigns",
         detail:
-          "Real-time analytics dashboard showing resolution rate, sentiment analysis, ticket volume trends, and escalation patterns. Built to give the support lead full visibility without opening a single ticket.",
+          "Designed and implemented a suite of popup campaigns targeting different stages of the customer journey — welcome discounts for new visitors, exit-intent offers for abandoning carts, and loyalty triggers for returning customers. Each campaign built around the brand's tone and visual identity.",
       },
       {
-        phase: "Phased Rollout",
+        phase: "Discount & Promotion Mechanics",
         detail:
-          "Launched in shadow mode for 2 weeks (AI generates responses but humans approve). Once confidence thresholds were met, switched to autonomous mode with human-in-the-loop for edge cases.",
+          "Set up a structured discount and promotion framework — limited-time offers, bundle incentives, and seasonal campaigns — with clear rules to protect margin while driving volume. Integrated with the store's existing customer flow.",
       },
     ],
     results: [
-      { metric: "72%", label: "Reduction in ticket volume" },
-      { metric: "48h → 4m", label: "Average response time" },
-      { metric: "94%", label: "Customer satisfaction score" },
-      { metric: "8 weeks", label: "Prototype to production" },
+      { metric: "0 critical", label: "Vulnerabilities post-hardening" },
+      { metric: "Faster load", label: "Across all key pages" },
+      { metric: "Active CRO", label: "Popup & discount system live" },
+      { metric: "Made in Spain", label: "Brand integrity maintained" },
     ],
     testimonial: {
       quote:
-        "Our support team went from firefighting to actually improving the product. The AI handles the routine; our team handles the relationships.",
-      author: "Tom Bradley",
-      role: "VP Product, NovaTech",
+        "We had no idea how exposed the store was until Cristian walked us through it. Now we have security we trust and campaigns that actually convert.",
+      author: "Founder",
+      role: "Coldfrank",
     },
-    stack: ["React", "TypeScript", "Python", "OpenAI API", "Supabase", "Vercel"],
-    nextProject: { slug: "meridian-finance", title: "Meridian Finance" },
+    stack: ["Shopify", "Liquid", "JavaScript", "Security Audit", "CRO", "Email Marketing"],
+    nextProject: { slug: "real-cd-espana", title: "Real CD España" },
   },
 } as const;
 
@@ -173,7 +226,6 @@ export default async function CaseStudyPage({
 }) {
   const { slug } = await params;
   const cs = CASE_STUDIES[slug as Slug];
-
   if (!cs) notFound();
 
   return (
@@ -187,6 +239,7 @@ export default async function CaseStudyPage({
           >
             <ArrowLeft className="h-3.5 w-3.5" strokeWidth={2} /> Back to Work
           </Link>
+
           <div className="mb-6 flex items-center gap-6">
             <span
               className="font-mono text-[10px] uppercase tracking-[0.15em]"
@@ -198,18 +251,34 @@ export default async function CaseStudyPage({
               {cs.client} · {cs.year}
             </span>
           </div>
+
           <h1 className="mb-8 font-display text-[clamp(2.5rem,6vw,5rem)] font-bold uppercase leading-[0.93] tracking-[-0.04em] text-brand-white">
             {cs.title}
           </h1>
-          <p className="mb-12 max-w-2xl font-body text-lg leading-relaxed text-brand-grey-300">
-            {cs.brief}
-          </p>
+
+          <div className="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <p className="max-w-2xl font-body text-lg leading-relaxed text-brand-grey-300">
+              {cs.brief}
+            </p>
+            <a
+              href={cs.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex flex-shrink-0 items-center gap-2 border border-brand-grey-700 px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] text-brand-grey-300 transition-all duration-300 hover:border-brand-white hover:text-brand-white"
+            >
+              View Live Site
+              <ArrowRight
+                className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                strokeWidth={2}
+              />
+            </a>
+          </div>
 
           {/* Hero image */}
           <div className="relative aspect-video w-full overflow-hidden">
             <Image
               src={cs.image}
-              alt={`${cs.title} project showcase`}
+              alt={`${cs.title} — project showcase`}
               fill
               className="object-cover"
               sizes="(max-width: 1400px) 100vw, 1400px"
@@ -232,10 +301,7 @@ export default async function CaseStudyPage({
           </h2>
           <div className="grid grid-cols-1 gap-px bg-brand-grey-900/20 md:grid-cols-2">
             {cs.approach.map((step, i) => (
-              <div
-                key={step.phase}
-                className="bg-brand-black-deep p-8 lg:p-10"
-              >
+              <div key={step.phase} className="bg-brand-black-deep p-8 lg:p-10">
                 <span className="mb-3 block font-mono text-xs tracking-[0.15em] text-brand-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -260,13 +326,13 @@ export default async function CaseStudyPage({
             </span>
           </div>
           <h2 className="mb-16 font-display text-[clamp(2rem,4vw,3.5rem)] font-bold uppercase leading-[0.95] tracking-[-0.03em] text-brand-white">
-            THE NUMBERS
+            THE OUTCOME
           </h2>
           <div className="grid grid-cols-2 gap-px bg-brand-grey-900/20 lg:grid-cols-4">
             {cs.results.map((result) => (
               <div key={result.label} className="bg-brand-black p-8 lg:p-10">
                 <span
-                  className="mb-2 block font-display text-3xl font-bold lg:text-4xl"
+                  className="mb-2 block font-display text-2xl font-bold lg:text-3xl"
                   style={{ color: cs.accentColor }}
                 >
                   {result.metric}
@@ -301,12 +367,12 @@ export default async function CaseStudyPage({
         </div>
       </section>
 
-      {/* Tech Stack */}
+      {/* Stack */}
       <section className="bg-brand-black-deep py-16">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="flex flex-wrap items-center gap-6">
             <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-brand-grey-700">
-              Tech Stack
+              Tools & Stack
             </span>
             {cs.stack.map((tech) => (
               <span
@@ -320,7 +386,7 @@ export default async function CaseStudyPage({
         </div>
       </section>
 
-      {/* Next Project CTA */}
+      {/* Next Project */}
       <section className="bg-brand-black py-20 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
