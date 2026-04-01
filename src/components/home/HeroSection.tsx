@@ -3,21 +3,21 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { ArrowRight } from "lucide-react";
 
-const HEADLINE = ["WE BUILD", "THE THING", "THEY WISH", "THEY HAD."];
+gsap.registerPlugin(SplitText, ScrambleTextPlugin, useGSAP);
 
-const LINE_VARIANTS = {
-  hidden: { y: "105%" },
-  visible: (i: number) => ({
-    y: "0%",
-    transition: {
-      delay: 0.2 + i * 0.12,
-      duration: 0.9,
-      ease: [0.16, 1, 0.3, 1] as const,
-    },
-  }),
-};
+// First 3 lines → ScrambleText
+const SCRAMBLE_LINES = ["WE BUILD", "THE THING", "THEY WISH"];
+// Last line → 3D char flip (accent color)
+const FLIP_LINE = "THEY HAD.";
+
+// Chars used during scramble — digital/code aesthetic
+const SCRAMBLE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&";
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 24 },
@@ -36,12 +36,104 @@ const STATS = [
 
 export function HeroSection() {
   const containerRef = useRef<HTMLElement>(null);
+  const headlineRef = useRef<HTMLHeadingElement>(null);
+
+  // Parallax + fade on scroll (Motion — unchanged)
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+
+  useGSAP(
+    () => {
+      if (!headlineRef.current) return;
+
+      gsap.matchMedia().add(
+        {
+          reduced: "(prefers-reduced-motion: reduce)",
+          motion: "(prefers-reduced-motion: no-preference)",
+        },
+        (context) => {
+          const { reduced } = context.conditions as { reduced: boolean };
+
+          if (reduced) {
+            // Reveal instantly — no motion
+            headlineRef.current
+              ?.querySelectorAll("[data-scramble], [data-flip]")
+              .forEach((el) => gsap.set(el, { opacity: 1 }));
+            return;
+          }
+
+          const scrambleEls =
+            headlineRef.current!.querySelectorAll("[data-scramble]");
+          const flipEl =
+            headlineRef.current!.querySelector<HTMLElement>("[data-flip]");
+
+          // ── Main timeline ──────────────────────────────────────────────
+          const tl = gsap.timeline({ delay: 0.25 });
+
+          // A: ScrambleText — lines 0, 1, 2 with stagger overlap
+          scrambleEls.forEach((line, i) => {
+            const target =
+              line.getAttribute("data-text") ?? (line as HTMLElement).innerText;
+
+            tl.to(
+              line,
+              {
+                duration: 1.15,
+                scrambleText: {
+                  text: target,
+                  chars: SCRAMBLE_CHARS,
+                  speed: 0.38,       // slower = more dramatic chaos
+                  revealDelay: 0.22, // % of duration before chars lock in
+                  newClass: "scramble-active",
+                },
+                ease: "none",
+              },
+              i * 0.46 // each line starts 0.46s after the previous
+            );
+          });
+
+          // B: 3D Flip — "THEY HAD." — char by char
+          if (flipEl) {
+            // Split into individual characters
+            const split = SplitText.create(flipEl, { type: "chars" });
+
+            // Set perspective on parent so 3D works
+            gsap.set(flipEl, { perspective: 600 });
+
+            // Start state: rotated -90° on X axis (below the baseline), invisible
+            gsap.set(split.chars, {
+              rotateX: -90,
+              opacity: 0,
+              filter: "blur(6px)",
+              transformOrigin: "50% 100% -8px",
+            });
+
+            // Flip in + de-blur, char by char
+            tl.to(
+              split.chars,
+              {
+                rotateX: 0,
+                opacity: 1,
+                filter: "blur(0px)",
+                duration: 0.72,
+                ease: "expo.out",
+                stagger: {
+                  each: 0.052,
+                  from: "start",
+                },
+              },
+              ">-0.18" // slight overlap with end of scramble sequence
+            );
+          }
+        }
+      );
+    },
+    { scope: containerRef }
+  );
 
   return (
     <section
@@ -55,7 +147,11 @@ export function HeroSection() {
             key={i}
             initial={{ scaleY: 0 }}
             animate={{ scaleY: 1 }}
-            transition={{ delay: i * 0.1, duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              delay: i * 0.1,
+              duration: 1.4,
+              ease: [0.16, 1, 0.3, 1],
+            }}
             className="absolute top-0 h-full w-px origin-top bg-brand-grey-900/25"
             style={{ left: `${(i + 1) * (100 / 6)}%` }}
           />
@@ -98,24 +194,32 @@ export function HeroSection() {
         </motion.div>
 
         {/* Headline */}
-        <h1 className="mb-10 max-w-6xl" aria-label="We build the thing they wish they had.">
-          {HEADLINE.map((line, i) => (
-            <span key={line} className="block overflow-hidden">
-              <motion.span
-                custom={i}
-                initial="hidden"
-                animate="visible"
-                variants={LINE_VARIANTS}
-                className={[
-                  "block font-display font-bold uppercase leading-[0.92] tracking-[-0.04em]",
-                  "text-[clamp(3.5rem,9vw,9rem)]",
-                  i === 3 ? "text-brand-accent" : "text-brand-white",
-                ].join(" ")}
-              >
-                {line}
-              </motion.span>
+        <h1
+          ref={headlineRef}
+          className="mb-10 max-w-6xl"
+          aria-label="We build the thing they wish they had."
+        >
+          {/* Lines 0-2 → ScrambleText */}
+          {SCRAMBLE_LINES.map((line) => (
+            <span
+              key={line}
+              data-scramble
+              data-text={line}
+              aria-hidden="true"
+              className="block font-display font-bold uppercase leading-[0.92] tracking-[-0.04em] text-[clamp(3.5rem,9vw,9rem)] text-brand-white"
+            >
+              {line}
             </span>
           ))}
+
+          {/* Line 3 → 3D char flip, accent color */}
+          <span
+            data-flip
+            aria-hidden="true"
+            className="block font-display font-bold uppercase leading-[0.92] tracking-[-0.04em] text-[clamp(3.5rem,9vw,9rem)] text-brand-accent"
+          >
+            {FLIP_LINE}
+          </span>
         </h1>
 
         {/* Sub */}
@@ -168,11 +272,21 @@ export function HeroSection() {
           variants={FADE_UP}
           className="mt-8 mb-12 lg:mb-0 flex flex-col items-center gap-2 text-center font-body text-sm font-normal leading-relaxed text-brand-grey-500 sm:items-start sm:text-left lg:flex-row lg:items-center lg:gap-0"
         >
-          <span>✓ 15+ Years Combined Experience <span className="hidden sm:inline lg:hidden">•</span> Senior-Only Team</span>
+          <span>
+            ✓ 15+ Years Combined Experience{" "}
+            <span className="hidden sm:inline lg:hidden">•</span> Senior-Only Team
+          </span>
           <span className="hidden px-3 text-brand-grey-700/50 lg:inline">•</span>
-          <span>🌍 International Portfolio <span className="hidden sm:inline lg:hidden">•</span> UK, USA, Spain, LATAM</span>
+          <span>
+            🌍 International Portfolio{" "}
+            <span className="hidden sm:inline lg:hidden">•</span> UK, USA, Spain, LATAM
+          </span>
           <span className="hidden px-3 text-brand-grey-700/50 lg:inline">•</span>
-          <span>📍 Surrey-Based <span className="hidden sm:inline lg:hidden">•</span> hello@leveloneagency.co.uk</span>
+          <span>
+            📍 Surrey-Based{" "}
+            <span className="hidden sm:inline lg:hidden">•</span>{" "}
+            hello@leveloneagency.co.uk
+          </span>
         </motion.div>
 
         {/* Stats */}
@@ -199,7 +313,7 @@ export function HeroSection() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.2, duration: 0.8 }}
+        transition={{ delay: 2.4, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
         aria-hidden
       >
