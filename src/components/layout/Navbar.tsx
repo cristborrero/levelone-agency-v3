@@ -91,10 +91,10 @@ export function Navbar() {
                 );
               })}
               <Link
-                href="/contact"
+                href="/quote"
                 className="border border-brand-accent bg-transparent px-6 py-2.5 font-mono text-xs font-bold uppercase tracking-[0.15em] text-brand-accent transition-all duration-300 hover:bg-brand-accent hover:text-brand-black"
               >
-                Get Started
+                Get a Quote
               </Link>
             </div>
 
@@ -184,10 +184,10 @@ export function Navbar() {
               className="mt-12"
             >
               <Link
-                href="/contact"
+                href="/quote"
                 className="inline-block border border-brand-accent px-8 py-3.5 font-mono text-sm font-bold uppercase tracking-[0.15em] text-brand-accent transition-all duration-300 hover:bg-brand-accent hover:text-brand-black"
               >
-                Start a Project →
+                Get a Quote →
               </Link>
             </motion.div>
 

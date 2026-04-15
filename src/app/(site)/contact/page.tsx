@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { ContactForm } from "@/components/shared/ContactForm";
-import { MapPin, Mail, Clock } from "lucide-react";
+import { MapPin, Mail, Clock, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a project with LevelOne Agency. Based in Surrey, working with businesses across the UK. Reply within one working day.",
+    "Get in touch with LevelOne Agency. Based in Surrey, working with businesses across the UK. Reply within one working day.",
   alternates: { canonical: "/contact" },
 };
 
@@ -17,11 +18,31 @@ export default function ContactPage() {
         overline="Get In Touch"
         title={"LET'S BUILD\nSOMETHING"}
         titleAccent="THAT LASTS."
-        description="Tell us about your project. We'll come back within one working day with a considered response — not an auto-reply."
+        description="Whether you're an existing client, a potential partner, or just have a question — we'd love to hear from you. Reply within one working day."
       />
 
       <section className="bg-brand-black py-20 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+
+          {/* Quote CTA Banner */}
+          <div className="mb-16 border border-brand-accent/20 bg-brand-accent/[0.03] p-8 lg:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div>
+              <h3 className="font-display text-lg font-bold uppercase text-brand-white mb-2">
+                Looking for a project quote?
+              </h3>
+              <p className="font-body text-sm text-brand-grey-400 max-w-md">
+                Use our interactive budget calculator to get a live estimate for your project — scope, timeline, and investment in under 2 minutes.
+              </p>
+            </div>
+            <Link
+              href="/quote"
+              className="group inline-flex items-center gap-3 shrink-0 bg-brand-accent px-8 py-3.5 font-display text-sm font-bold uppercase tracking-[0.1em] text-brand-black transition-all duration-300 hover:shadow-[0_0_60px_rgba(212,255,0,0.18)]"
+            >
+              Get a Quote
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
+            </Link>
+          </div>
+
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
             <ContactForm />
 

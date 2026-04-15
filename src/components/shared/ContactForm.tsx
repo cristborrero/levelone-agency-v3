@@ -24,19 +24,20 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const SERVICES = [
   "Web Design & Development",
+  "E-Commerce",
   "Brand Identity",
   "Digital Marketing",
   "AI Solutions",
   "Full Digital Package",
-  "Not sure yet",
+  "Other / Not sure yet",
 ];
 
 const BUDGETS = [
-  "Under £2,000",
-  "£2,000 – £5,000",
-  "£5,000 – £15,000",
-  "£15,000 – £50,000",
-  "£50,000+",
+  "Under £1,000",
+  "£1,000 – £3,000",
+  "£3,000 – £8,000",
+  "£8,000 – £15,000",
+  "£15,000+",
 ];
 
 const inputClass =

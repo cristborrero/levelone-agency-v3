@@ -243,10 +243,10 @@ export function HeroSection() {
           className="flex flex-wrap items-center gap-6"
         >
           <Link
-            href="/contact"
+            href="/quote"
             className="group relative inline-flex items-center gap-3 bg-brand-accent px-9 py-4 font-display text-sm font-bold uppercase tracking-[0.15em] text-brand-black transition-all duration-300 hover:shadow-[0_0_60px_rgba(212,255,0,0.18)]"
           >
-            Start a Project
+            Get a Quote
             <ArrowRight
               className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
               strokeWidth={2.5}
@@ -273,18 +273,21 @@ export function HeroSection() {
           className="mt-8 mb-12 lg:mb-0 flex flex-col items-center gap-2 text-center font-body text-sm font-normal leading-relaxed text-brand-grey-500 sm:items-start sm:text-left lg:flex-row lg:items-center lg:gap-0"
         >
           <span>
-            ✓ 15+ Years Combined Experience{" "}
-            <span className="hidden sm:inline lg:hidden">•</span> Senior-Only Team
+            <span className="font-mono text-[10px] text-brand-accent/80 mr-1.5">[01]</span>
+            15+ Years Combined Experience{" "}
+            <span className="hidden sm:inline lg:hidden px-1.5 text-brand-grey-700/50">//</span> Senior-Only Team
           </span>
-          <span className="hidden px-3 text-brand-grey-700/50 lg:inline">•</span>
+          <span className="hidden px-3 text-brand-grey-700/50 lg:inline">//</span>
           <span>
-            🌍 International Portfolio{" "}
-            <span className="hidden sm:inline lg:hidden">•</span> UK, USA, Spain, LATAM
+            <span className="font-mono text-[10px] text-brand-accent/80 mr-1.5">[02]</span>
+            International Portfolio{" "}
+            <span className="hidden sm:inline lg:hidden px-1.5 text-brand-grey-700/50">//</span> UK, USA, Spain, LATAM
           </span>
-          <span className="hidden px-3 text-brand-grey-700/50 lg:inline">•</span>
+          <span className="hidden px-3 text-brand-grey-700/50 lg:inline">//</span>
           <span>
-            📍 Surrey-Based{" "}
-            <span className="hidden sm:inline lg:hidden">•</span>{" "}
+            <span className="font-mono text-[10px] text-brand-accent/80 mr-1.5">[03]</span>
+            Surrey-Based{" "}
+            <span className="hidden sm:inline lg:hidden px-1.5 text-brand-grey-700/50">//</span>{" "}
             hello@leveloneagency.co.uk
           </span>
         </motion.div>

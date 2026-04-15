@@ -5,64 +5,64 @@ import { ServicePricingTiers, PricingTier } from "@/components/shared/ServicePri
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Solutions & Automation Surrey",
-  description: "Work smarter, not harder. AI solutions that save time and cut costs. Practical, revenue-generating automations. Based in Surrey.",
-  alternates: { canonical: "/services/ai-solutions" },
+  title: "Full Digital Agency Package Surrey",
+  description: "The all-in-one digital department for ambitious brands. Combining brand, web, marketing, and AI into one seamless strategy. Based in Surrey.",
+  alternates: { canonical: "/services/full-package" },
 };
 
-const AI_TIERS: PricingTier[] = [
+const PACKAGE_TIERS: PricingTier[] = [
   {
-    name: "AI Readiness Audit",
-    price: "From £1,200",
-    perfectFor: "Consultancies and agencies aware of AI but unsure where to start without wasting money.",
+    name: "Launch Package",
+    price: "From £5,000",
+    perfectFor: "Funded startups or new ventures needing a complete, professional launch pad.",
     features: [
-      "Deep dive into current operational bottlenecks",
-      "Process mapping for 3 core departments",
-      "Identification of immediate AI ROI opportunities",
-      "Software & tool recommendations",
-      "Delivered as an actionable roadmap"
+      "Brand Identity Kit (Logo, Colours, Type)",
+      "Custom Marketing Website (up to 8 pages)",
+      "Copywriting & Tone of Voice setup",
+      "Basic SEO & Analytics foundation",
+      "Delivered in 4–6 weeks"
     ],
-    ctaText: "Book an AI audit from £1,200",
+    ctaText: "Launch your business from £5,000",
     level: "starter"
   },
   {
-    name: "Custom AI Chatbot",
-    price: "From £3,500",
-    perfectFor: "E-Commerce or service businesses drowning in repetitive customer support queries.",
+    name: "Growth Package",
+    price: "From £10,000",
+    perfectFor: "Established businesses (1M+ revenue) undergoing a transformation or aggressive push.",
     features: [
-      "Custom GPT / Claude trained on your company data",
-      "Website integration (widget or dedicated page)",
-      "Lead qualification & appointment booking flows",
-      "Handover protocol to human agents",
-      "1 month of managed optimisation"
+      "Full Brand Re-positioning & System",
+      "High-Performance Custom Website or E-Com",
+      "3 Months SEO & Content Strategy included",
+      "Automated lead capture & CRM integration",
+      "Delivered in 8–12 weeks"
     ],
-    quote: "A sales assistant that works 24/7, never sleeps, and knows your entire catalogue.",
-    ctaText: "Build your AI bot from £3,500",
+    quote: "Stop managing freelancers. We act as your entire digital department.",
+    ctaText: "Start the Growth Package from £10,000",
     level: "growth"
   },
   {
-    name: "Full Workflow Automation",
-    price: "From £7,500",
-    perfectFor: "Operations-heavy businesses looking to cut administrative bloat and scale without hiring.",
+    name: "The LevelOne Partnership",
+    price: "From £20,000+",
+    perfectFor: "Market leaders looking to digitise completely, integrating AI, bespoke apps, and omni-channel marketing.",
     features: [
-      "End-to-end process automation (Make / Zapier)",
-      "CRM, Email, and accounting integrations",
-      "Document processing & AI data extraction",
-      "Custom internal dashboards & reporting",
-      "Staff training & handover"
+      "Everything in Growth, plus:",
+      "Custom Web Application / Portal development",
+      "AI Workflow Automation across the company",
+      "Dedicated account direction & priority SLA",
+      "Monthly Omni-channel marketing retainer built-in"
     ],
-    ctaText: "Let's scope your automation",
+    ctaText: "Let's discuss a partnership",
     level: "advanced"
   }
 ];
 
-export default function AiSolutionsPage() {
+export default function FullPackagePage() {
   return (
     <>
       <PageHero
         overline="Service"
-        title={"WORK SMARTER,\nNOT HARDER."}
-        description="AI isn't just a buzzword; it's a competitive advantage. We build practical, revenue-generating AI automations for businesses that want to do more with less. No hype, just ROI."
+        title={"THE FULL\nPACKAGE."}
+        description="Why manage 5 different freelancers when you can have one unified team? The Full Package is our premium offering — combining brand, web, marketing, and AI into one seamless strategy. Built for businesses ready to dominate."
       />
 
       <section className="bg-brand-black py-20 lg:py-28">
@@ -71,7 +71,7 @@ export default function AiSolutionsPage() {
             <span className="font-mono text-xs uppercase tracking-[0.15em] text-brand-accent">Investment Options</span>
           </div>
           
-          <ServicePricingTiers tiers={AI_TIERS} />
+          <ServicePricingTiers tiers={PACKAGE_TIERS} />
         </div>
       </section>
 
@@ -96,8 +96,10 @@ export default function AiSolutionsPage() {
               <p className="mb-4 font-mono text-xs uppercase tracking-[0.15em] text-brand-grey-500">Related Services</p>
               <div className="flex flex-wrap gap-3">
                 {[
-                  { label: "Web Design", href: "/services/web-design" }, 
-                  { label: "Full Package", href: "/services/full-package" }
+                  { label: "Brand Identity", href: "/services/brand-identity" }, 
+                  { label: "Web Design", href: "/services/web-design" },
+                  { label: "Digital Marketing", href: "/services/digital-marketing" },
+                  { label: "AI Solutions", href: "/services/ai-solutions" }
                 ].map((s) => (
                   <Link key={s.label} href={s.href} className="group inline-flex items-center gap-2 border border-brand-grey-700/50 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-300 transition-all duration-300 hover:border-brand-accent/40 hover:text-brand-white">
                     {s.label} <ArrowUpRight className="h-3 w-3 opacity-0 transition-all duration-300 group-hover:opacity-100" strokeWidth={2} />

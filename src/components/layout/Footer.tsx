@@ -4,9 +4,11 @@ import { NewsletterForm } from "@/components/shared/NewsletterForm";
 
 const SERVICES_LINKS = [
   { label: "Web Design & Dev", href: "/services/web-design" },
+  { label: "E-Commerce", href: "/services/e-commerce" },
   { label: "Brand Identity", href: "/services/brand-identity" },
   { label: "Digital Marketing", href: "/services/digital-marketing" },
   { label: "AI Solutions", href: "/services/ai-solutions" },
+  { label: "The Full Package", href: "/services/full-package" },
 ];
 
 const COMPANY_LINKS = [

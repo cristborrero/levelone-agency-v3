@@ -37,6 +37,22 @@ const SERVICES = [
       "AI workflows, chatbots, and automation built for your specific operation. Measurable competitive edge.",
     tags: ["Chatbots", "Automation", "Integrations", "Data"],
   },
+  {
+    number: "05",
+    title: "E-Commerce",
+    href: "/services/e-commerce",
+    description:
+      "Scalable online stores designed to convert. We build headless commerce experiences that grow with your brand.",
+    tags: ["Shopify", "Headless", "CRO", "Subscriptions"],
+  },
+  {
+    number: "06",
+    title: "The Full Package",
+    href: "/services/full-package",
+    description:
+      "Your entire digital department. High-end design, code, and marketing bundled into a strategic growth partnership.",
+    tags: ["Retainer", "Growth", "All-In-One", "Partnership"],
+  },
 ] as const;
 
 export function ServicesPreview() {
@@ -78,7 +94,7 @@ export function ServicesPreview() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-px bg-brand-grey-900/25 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px bg-brand-grey-900/25 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, i) => (
             <motion.div
               key={service.number}
