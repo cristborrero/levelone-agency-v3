@@ -14,7 +14,7 @@ const contactSchema = z.object({
   company: z.string().optional(),
   service: z.string().min(1, "Please select a service"),
   budget: z.string().min(1, "Please select a budget range"),
-  message: z.string().min(20, "Please tell us a bit more about your project"),
+  message: z.string().min(10, "Please tell us a bit more about your project (min. 10 chars)"),
   consent: z.literal(true, {
     errorMap: () => ({ message: "You must agree to our privacy policy to continue" }),
   }),
@@ -48,26 +48,52 @@ const errorClass = "mt-1.5 font-mono text-[10px] text-brand-error";
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<ContactFormData>({ resolver: zodResolver(contactSchema) });
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      company: "",
+      service: "",
+      budget: "",
+      message: "",
+      consent: false as unknown as true,
+    },
+  });
 
   const onSubmit = async (data: ContactFormData) => {
     setStatus("submitting");
+    setErrorMessage("");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error("Failed");
+      
+      const responseData = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(
+          responseData?.error?.message || 
+          responseData?.error || 
+          "Failed to send message"
+        );
+      }
+      
       setStatus("success");
       reset();
-    } catch {
+    } catch (error: any) {
+      console.error("Form submission error:", error);
       setStatus("error");
+      setErrorMessage(error.message || "An unexpected error occurred.");
     }
   };
 
@@ -206,9 +232,8 @@ export function ContactForm() {
           </div>
 
           {status === "error" && (
-            <p className="font-mono text-xs text-brand-error">
-              Something went wrong. Please try again or email us directly at
-              hello@leveloneagency.co.uk
+            <p className="font-mono text-[10px] text-brand-error">
+              {errorMessage ? `Error: ${errorMessage}` : "Something went wrong. Please try again or email us directly at hello@leveloneagency.co.uk"}
             </p>
           )}
 
