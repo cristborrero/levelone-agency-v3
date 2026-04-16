@@ -371,7 +371,7 @@ export function QuoteCalculator() {
           ════════════════════════════════════════════════════════ */}
       <div className="lg:col-span-7 xl:col-span-8 order-2 lg:order-1">
         {/* Step indicator */}
-        <div className="mb-14">
+        <div className="mb-10">
           <div className="flex items-center gap-0">
             {STEPS.map((step, idx) => {
               const isDone = idx < currentStep;
@@ -435,7 +435,7 @@ export function QuoteCalculator() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="space-y-10"
+                className="space-y-8"
               >
                 <div>
                   <h2 className="font-display text-2xl lg:text-3xl font-bold text-brand-white uppercase tracking-tight mb-3">
@@ -458,7 +458,7 @@ export function QuoteCalculator() {
                         initial="hidden"
                         animate="visible"
                         variants={staggerItem}
-                        className={`group relative flex flex-col p-6 cursor-pointer border transition-all duration-500 ${
+                        className={`group relative flex flex-col p-4 cursor-pointer border transition-all duration-500 ${
                           isSelected
                             ? "border-brand-accent/60 bg-brand-accent/[0.04]"
                             : "border-brand-grey-800/60 hover:border-brand-grey-600"
@@ -479,9 +479,9 @@ export function QuoteCalculator() {
                           style={{ transformOrigin: "left" }}
                         />
 
-                        <div className="flex justify-between items-start mb-8">
+                        <div className="flex justify-between items-start mb-4">
                           <div
-                            className={`p-3 transition-all duration-500 ${
+                            className={`p-2 transition-all duration-500 ${
                               isSelected
                                 ? "text-brand-black bg-brand-accent"
                                 : "text-brand-grey-300 bg-brand-grey-900/60 group-hover:bg-brand-grey-800"
@@ -508,10 +508,10 @@ export function QuoteCalculator() {
                             />
                           </div>
                         </div>
-                        <span className="font-display font-bold text-brand-white text-lg tracking-tight mb-1">
+                        <span className="font-display font-bold text-brand-white text-base tracking-tight mb-0.5">
                           {s.label}
                         </span>
-                        <span className="font-body text-brand-grey-500 text-sm">
+                        <span className="font-body text-brand-grey-500 text-xs">
                           {s.desc}
                         </span>
                       </motion.label>
@@ -533,7 +533,7 @@ export function QuoteCalculator() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="space-y-10"
+                className="space-y-8"
               >
                 <div>
                   <h2 className="font-display text-2xl lg:text-3xl font-bold text-brand-white uppercase tracking-tight mb-3">
@@ -557,7 +557,7 @@ export function QuoteCalculator() {
                           initial="hidden"
                           animate="visible"
                           variants={staggerItem}
-                          className={`group flex items-center gap-5 p-5 cursor-pointer border transition-all duration-500 ${
+                          className={`group flex items-center gap-5 p-3.5 cursor-pointer border transition-all duration-500 ${
                             isSelected
                               ? "border-brand-accent/40 bg-brand-accent/[0.03]"
                               : "border-brand-grey-800/60 hover:border-brand-grey-700"
@@ -636,7 +636,7 @@ export function QuoteCalculator() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="space-y-10"
+                className="space-y-8"
               >
                 <div>
                   <h2 className="font-display text-2xl lg:text-3xl font-bold text-brand-white uppercase tracking-tight mb-3">
@@ -658,7 +658,7 @@ export function QuoteCalculator() {
                         initial="hidden"
                         animate="visible"
                         variants={staggerItem}
-                        className={`group flex items-center gap-5 p-6 cursor-pointer border transition-all duration-500 ${
+                        className={`group flex items-center gap-5 p-4 cursor-pointer border transition-all duration-500 ${
                           isSelected
                             ? "border-brand-accent/60 bg-brand-accent/[0.04]"
                             : "border-brand-grey-800/60 hover:border-brand-grey-600"
