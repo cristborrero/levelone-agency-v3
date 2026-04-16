@@ -30,7 +30,7 @@ export function Footer() {
 
   return (
     <footer className="relative bg-brand-black-deep">
-      <div className="h-[1px] w-full bg-brand-grey-900/50" />
+      <div className="h-px w-full bg-brand-grey-900/50" />
       <div className="mx-auto max-w-[1400px] px-6 py-16 lg:px-10 lg:py-20">
 
         <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
@@ -52,9 +52,9 @@ export function Footer() {
             </p>
             <a
               href="mailto:hello@leveloneagency.co.uk"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-300 transition-colors duration-300 hover:text-brand-accent"
+              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-brand-grey-300 transition-colors duration-300 hover:text-brand-accent"
             >
-              <span className="h-[1px] w-4 bg-current" />
+              <span className="h-px w-4 bg-current" />
               hello@leveloneagency.co.uk
             </a>
           </div>
@@ -124,14 +124,14 @@ export function Footer() {
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-brand-grey-700">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-grey-700">
                 © {year} LevelOne Agency
               </span>
               {LEGAL_LINKS.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="font-mono text-[10px] uppercase tracking-[0.1em] text-brand-grey-700 transition-colors duration-300 hover:text-brand-grey-300"
+                  className="font-mono text-[10px] uppercase tracking-widest text-brand-grey-700 transition-colors duration-300 hover:text-brand-grey-300"
                 >
                   {link.label}
                 </Link>

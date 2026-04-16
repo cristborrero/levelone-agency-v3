@@ -122,7 +122,7 @@ export default async function InsightArticlePage({
           {/* Back link */}
           <Link
             href="/insights"
-            className="mb-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-500 transition-colors duration-300 hover:text-brand-white"
+            className="mb-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-brand-grey-500 transition-colors duration-300 hover:text-brand-white"
           >
             <ArrowLeft className="h-3.5 w-3.5" strokeWidth={2} /> Back to
             Insights

@@ -52,7 +52,7 @@ export function NewsletterForm() {
           type="submit"
           aria-label="Subscribe"
           disabled={status === "submitting" || status === "success"}
-          className="flex-shrink-0 flex items-center justify-center bg-brand-accent px-5 py-3 font-display text-sm font-bold text-brand-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,255,0,0.15)] disabled:opacity-80 disabled:cursor-not-allowed w-14"
+          className="shrink-0 flex items-center justify-center bg-brand-accent px-5 py-3 font-display text-sm font-bold text-brand-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,255,0,0.15)] disabled:opacity-80 disabled:cursor-not-allowed w-14"
         >
           {status === "submitting" ? (
             <span className="h-4 w-4 animate-spin rounded-full border-2 border-brand-black border-t-transparent" />

@@ -58,7 +58,7 @@ export function ServicePricingTiers({ tiers }: ServicePricingTiersProps) {
                 </p>
 
                 <div className="mb-8">
-                  <p className="mb-2 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-500">
+                  <p className="mb-2 font-mono text-xs uppercase tracking-widest text-brand-grey-500">
                     Perfect For
                   </p>
                   <p className="font-body text-base leading-relaxed text-brand-grey-300">
@@ -78,7 +78,7 @@ export function ServicePricingTiers({ tiers }: ServicePricingTiersProps) {
 
             {/* Right Column: Features & CTA */}
             <div className="flex flex-1 flex-col bg-brand-black/40 p-6 md:p-8">
-              <p className="mb-6 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-500">
+              <p className="mb-6 font-mono text-xs uppercase tracking-widest text-brand-grey-500">
                 What's Included
               </p>
               <ul className="mb-10 flex-1 space-y-4">
@@ -99,7 +99,7 @@ export function ServicePricingTiers({ tiers }: ServicePricingTiersProps) {
 
               <Link
                 href={tier.ctaLink || "/quote"}
-                className={`group inline-flex items-center gap-3 w-full justify-between border px-6 py-4 font-display text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300 ${
+                className={`group inline-flex items-center gap-3 w-full justify-between border px-6 py-4 font-display text-sm font-bold uppercase tracking-widest transition-all duration-300 ${
                   isHighlight
                     ? "border-brand-accent bg-brand-accent text-brand-black hover:bg-brand-accent/90"
                     : "border-brand-grey-700 text-brand-white hover:border-brand-white"

@@ -235,7 +235,7 @@ export default async function CaseStudyPage({
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <Link
             href="/work"
-            className="mb-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-500 transition-colors duration-300 hover:text-brand-white"
+            className="mb-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-brand-grey-500 transition-colors duration-300 hover:text-brand-white"
           >
             <ArrowLeft className="h-3.5 w-3.5" strokeWidth={2} /> Back to Work
           </Link>
@@ -264,7 +264,7 @@ export default async function CaseStudyPage({
               href={cs.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex flex-shrink-0 items-center gap-2 border border-brand-grey-700 px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] text-brand-grey-300 transition-all duration-300 hover:border-brand-white hover:text-brand-white"
+              className="group inline-flex shrink-0 items-center gap-2 border border-brand-grey-700 px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] text-brand-grey-300 transition-all duration-300 hover:border-brand-white hover:text-brand-white"
             >
               View Live Site
               <ArrowRight
@@ -377,7 +377,7 @@ export default async function CaseStudyPage({
             {cs.stack.map((tech) => (
               <span
                 key={tech}
-                className="border border-brand-grey-700/30 px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em] text-brand-grey-500"
+                className="border border-brand-grey-700/30 px-4 py-1.5 font-mono text-[10px] uppercase tracking-widest text-brand-grey-500"
               >
                 {tech}
               </span>

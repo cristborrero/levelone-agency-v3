@@ -82,7 +82,7 @@ export default function ServicesPage() {
                   <ul className="space-y-2">
                     {service.deliverables.map((item) => (
                       <li key={item} className="flex items-center gap-3 font-body text-sm text-brand-grey-500 transition-colors duration-300 group-hover:text-brand-grey-300">
-                        <span className="h-px w-4 bg-brand-accent flex-shrink-0" />
+                        <span className="h-px w-4 bg-brand-accent shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -93,7 +93,7 @@ export default function ServicesPage() {
                     <span className="block font-mono text-[10px] uppercase tracking-[0.15em] text-brand-grey-700 mb-1">Starting from</span>
                     <span className="font-display text-xl font-bold text-brand-accent">{service.from}</span>
                   </div>
-                  <span className="font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-500 transition-colors duration-300 group-hover:text-brand-white">
+                  <span className="font-mono text-xs uppercase tracking-widest text-brand-grey-500 transition-colors duration-300 group-hover:text-brand-white">
                     Learn more →
                   </span>
                 </div>

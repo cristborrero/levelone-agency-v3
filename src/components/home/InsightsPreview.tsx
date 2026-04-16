@@ -51,7 +51,7 @@ export function InsightsPreview({ posts }: InsightsPreviewProps) {
           </div>
           <Link
             href="/insights"
-            className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-300 transition-colors duration-300 hover:text-brand-white"
+            className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-brand-grey-300 transition-colors duration-300 hover:text-brand-white"
           >
             All articles
             <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />

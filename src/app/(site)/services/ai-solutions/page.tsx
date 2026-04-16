@@ -99,7 +99,7 @@ export default function AiSolutionsPage() {
                   { label: "Web Design", href: "/services/web-design" }, 
                   { label: "Full Package", href: "/services/full-package" }
                 ].map((s) => (
-                  <Link key={s.label} href={s.href} className="group inline-flex items-center gap-2 border border-brand-grey-700/50 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-300 transition-all duration-300 hover:border-brand-accent/40 hover:text-brand-white">
+                  <Link key={s.label} href={s.href} className="group inline-flex items-center gap-2 border border-brand-grey-700/50 px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-brand-grey-300 transition-all duration-300 hover:border-brand-accent/40 hover:text-brand-white">
                     {s.label} <ArrowUpRight className="h-3 w-3 opacity-0 transition-all duration-300 group-hover:opacity-100" strokeWidth={2} />
                   </Link>
                 ))}

@@ -460,7 +460,7 @@ export function QuoteCalculator() {
                         variants={staggerItem}
                         className={`group relative flex flex-col p-4 cursor-pointer border transition-all duration-500 ${
                           isSelected
-                            ? "border-brand-accent/60 bg-brand-accent/[0.04]"
+                            ? "border-brand-accent/60 bg-brand-accent/4"
                             : "border-brand-grey-800/60 hover:border-brand-grey-600"
                         }`}
                       >
@@ -559,7 +559,7 @@ export function QuoteCalculator() {
                           variants={staggerItem}
                           className={`group flex items-center gap-5 p-3.5 cursor-pointer border transition-all duration-500 ${
                             isSelected
-                              ? "border-brand-accent/40 bg-brand-accent/[0.03]"
+                              ? "border-brand-accent/40 bg-brand-accent/3"
                               : "border-brand-grey-800/60 hover:border-brand-grey-700"
                           }`}
                         >
@@ -660,7 +660,7 @@ export function QuoteCalculator() {
                         variants={staggerItem}
                         className={`group flex items-center gap-5 p-4 cursor-pointer border transition-all duration-500 ${
                           isSelected
-                            ? "border-brand-accent/60 bg-brand-accent/[0.04]"
+                            ? "border-brand-accent/60 bg-brand-accent/4"
                             : "border-brand-grey-800/60 hover:border-brand-grey-600"
                         }`}
                       >
@@ -873,7 +873,7 @@ export function QuoteCalculator() {
               <button
                 type="button"
                 onClick={nextStep}
-                className="group relative inline-flex items-center gap-3 bg-brand-white text-brand-black px-8 py-3.5 font-display text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300 hover:bg-brand-accent"
+                className="group relative inline-flex items-center gap-3 bg-brand-white text-brand-black px-8 py-3.5 font-display text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-brand-accent"
               >
                 Continue
                 <ArrowRight

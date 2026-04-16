@@ -121,7 +121,7 @@ export function ProcessSection() {
                 <p className="mb-5 font-body text-sm leading-relaxed text-brand-grey-300">
                   {step.description}
                 </p>
-                <span className="inline-block border border-brand-grey-700/40 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-brand-grey-500">
+                <span className="inline-block border border-brand-grey-700/40 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-brand-grey-500">
                   {step.duration}
                 </span>
               </motion.div>
@@ -164,7 +164,7 @@ export function ProcessSection() {
                 <p className="mb-4 font-body text-sm leading-relaxed text-brand-grey-300">
                   {step.description}
                 </p>
-                <span className="inline-block border border-brand-grey-700/40 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-brand-grey-500">
+                <span className="inline-block border border-brand-grey-700/40 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-brand-grey-500">
                   {step.duration}
                 </span>
               </motion.div>

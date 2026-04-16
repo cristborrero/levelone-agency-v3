@@ -138,7 +138,7 @@ export function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-[100dvh] flex-col justify-end overflow-hidden bg-brand-black-deep pb-16 pt-28 lg:pb-28"
+      className="relative flex min-h-dvh flex-col justify-end overflow-hidden bg-brand-black-deep pb-16 pt-28 lg:pb-28"
     >
       {/* Grid lines */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
@@ -304,7 +304,7 @@ export function HeroSection() {
               <span className="font-display text-2xl font-bold text-brand-accent">
                 {stat.value}
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-brand-grey-500">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-grey-500">
                 {stat.label}
               </span>
             </div>

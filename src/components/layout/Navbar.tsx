@@ -74,7 +74,7 @@ export function Navbar() {
                     key={link.label}
                     href={link.href}
                     className={[
-                      "group relative font-mono text-xs uppercase tracking-[0.1em] transition-colors duration-300",
+                      "group relative font-mono text-xs uppercase tracking-widest transition-colors duration-300",
                       isActive
                         ? "text-brand-white"
                         : "text-brand-grey-300 hover:text-brand-white",
@@ -196,7 +196,7 @@ export function Navbar() {
               animate={{ scaleX: 1 }}
               exit={{ scaleX: 0 }}
               transition={{ delay: 0.45, duration: 0.5 }}
-              className="absolute bottom-16 left-10 right-10 h-[1px] origin-left bg-brand-grey-900"
+              className="absolute bottom-16 left-10 right-10 h-px origin-left bg-brand-grey-900"
             />
             <motion.p
               initial={{ opacity: 0 }}

@@ -91,7 +91,7 @@ export default async function InsightsPage() {
               <p className="mb-6 max-w-2xl font-body text-base leading-relaxed text-brand-grey-300">
                 {featured.excerpt}
               </p>
-              <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-300 transition-colors duration-300 group-hover:text-brand-white">
+              <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-brand-grey-300 transition-colors duration-300 group-hover:text-brand-white">
                 Read article{" "}
                 <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
               </span>

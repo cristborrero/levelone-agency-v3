@@ -83,7 +83,7 @@ export function ServicesPreview() {
             </p>
             <Link
               href="/services"
-              className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-300 transition-colors duration-300 hover:text-brand-white"
+              className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-brand-grey-300 transition-colors duration-300 hover:text-brand-white"
             >
               All services
               <ArrowUpRight
@@ -135,7 +135,7 @@ export function ServicesPreview() {
                     ))}
                   </div>
                   <ArrowUpRight
-                    className="h-5 w-5 flex-shrink-0 text-brand-accent opacity-0 transition-all duration-300 group-hover:opacity-100"
+                    className="h-5 w-5 shrink-0 text-brand-accent opacity-0 transition-all duration-300 group-hover:opacity-100"
                     strokeWidth={2}
                   />
                 </div>

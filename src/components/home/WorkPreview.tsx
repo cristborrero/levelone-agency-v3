@@ -79,7 +79,7 @@ export function WorkPreview() {
           </div>
           <Link
             href="/work"
-            className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-300 transition-colors duration-300 hover:text-brand-white"
+            className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-brand-grey-300 transition-colors duration-300 hover:text-brand-white"
           >
             View all work
             <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
@@ -111,7 +111,7 @@ export function WorkPreview() {
                   className="object-cover opacity-40 transition-all duration-700 group-hover:opacity-60 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-brand-black via-brand-black/60 to-transparent" />
               </div>
 
               {/* Accent top bar */}
@@ -181,14 +181,14 @@ export function WorkPreview() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="border border-brand-grey-700/30 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.1em] text-brand-grey-500 transition-colors duration-300 group-hover:border-brand-grey-700/60 group-hover:text-brand-grey-400"
+                        className="border border-brand-grey-700/30 px-2.5 py-1 font-mono text-[9px] uppercase tracking-widest text-brand-grey-500 transition-colors duration-300 group-hover:border-brand-grey-700/60 group-hover:text-brand-grey-400"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                   <ArrowUpRight
-                    className="h-5 w-5 flex-shrink-0 opacity-0 transition-all duration-300 group-hover:opacity-100"
+                    className="h-5 w-5 shrink-0 opacity-0 transition-all duration-300 group-hover:opacity-100"
                     style={{ color: project.accentColor }}
                     strokeWidth={2}
                   />

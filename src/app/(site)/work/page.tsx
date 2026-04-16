@@ -106,7 +106,7 @@ export default function WorkPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-brand-black/60 lg:bg-gradient-to-l lg:from-brand-black/20 lg:to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-r from-transparent to-brand-black/60 lg:bg-linear-to-l lg:from-brand-black/20 lg:to-transparent" />
               </div>
               <div className="flex flex-1 flex-col justify-between p-10 lg:p-16">
                 <div>
@@ -146,7 +146,7 @@ export default function WorkPage() {
                     ))}
                   </div>
                   <ArrowUpRight
-                    className="ml-auto h-6 w-6 flex-shrink-0 opacity-0 transition-all duration-300 group-hover:opacity-100"
+                    className="ml-auto h-6 w-6 shrink-0 opacity-0 transition-all duration-300 group-hover:opacity-100"
                     style={{ color: project.accentColor }}
                     strokeWidth={2}
                   />
@@ -172,7 +172,7 @@ export default function WorkPage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-brand-black via-brand-black/40 to-transparent" />
                 </div>
                 <div className="flex flex-1 flex-col justify-between p-8 lg:p-10">
                   <div>
@@ -184,7 +184,7 @@ export default function WorkPage() {
                         {project.year}
                       </span>
                     </div>
-                    <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.1em] text-brand-grey-700">
+                    <p className="mb-1 font-mono text-[10px] uppercase tracking-widest text-brand-grey-700">
                       {project.client}
                     </p>
                     <h3 className="mb-3 font-display text-xl font-bold uppercase leading-tight tracking-[-0.02em] text-brand-white">

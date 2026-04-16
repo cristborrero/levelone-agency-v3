@@ -80,7 +80,7 @@ export default function AboutPage() {
             {CAPABILITIES.map((cap) => (
               <span
                 key={cap}
-                className="border border-brand-grey-700/50 px-4 py-2 font-mono text-xs uppercase tracking-[0.1em] text-brand-grey-300 transition-all duration-300 hover:border-brand-accent/40 hover:text-brand-white"
+                className="border border-brand-grey-700/50 px-4 py-2 font-mono text-xs uppercase tracking-widest text-brand-grey-300 transition-all duration-300 hover:border-brand-accent/40 hover:text-brand-white"
               >
                 {cap}
               </span>
