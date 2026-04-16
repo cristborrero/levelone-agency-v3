@@ -105,10 +105,11 @@ export function HeroSection() {
             gsap.set(flipEl, { perspective: 600 });
 
             // Start state: rotated -90° on X axis (below the baseline), invisible
+            // Optimization: Remove aggressive blur to maintain 60fps on mobile
             gsap.set(split.chars, {
               rotateX: -90,
               opacity: 0,
-              filter: "blur(6px)",
+              filter: "blur(0px)",
               transformOrigin: "50% 100% -8px",
             });
 
@@ -170,7 +171,7 @@ export function HeroSection() {
         initial={{ opacity: 0, scale: 0.6 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.6, duration: 2, ease: "easeOut" }}
-        className="pointer-events-none absolute -right-40 top-0 h-[700px] w-[700px] rounded-full blur-[140px]"
+        className="pointer-events-none absolute -right-20 md:-right-40 -top-20 md:top-0 h-[400px] w-[400px] md:h-[700px] md:w-[700px] rounded-full blur-[80px] md:blur-[140px]"
         style={{ backgroundColor: "rgba(212,255,0,0.04)" }}
         aria-hidden
       />

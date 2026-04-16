@@ -890,11 +890,11 @@ export function QuoteCalculator() {
                 {status === "submitting" ? (
                   <>
                     <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-brand-black border-t-transparent" />
-                    Submitting…
+                    Locking Estimate…
                   </>
                 ) : (
                   <>
-                    Submit Project Brief
+                    Lock This Estimate
                     <ArrowRight
                       className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                       strokeWidth={2.5}
@@ -1027,12 +1027,24 @@ export function QuoteCalculator() {
               </AnimatePresence>
             </div>
 
-            {/* Disclaimer */}
+            {/* Trust Badges */}
             <div className="pt-6 border-t border-brand-grey-800/40">
-              <p className="font-mono text-[10px] uppercase leading-relaxed text-brand-grey-600">
-                * This calculator provides a rough estimate. A firm, fixed-price
-                quote will be provided after our strategy session. No hourly
-                surprises.
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.15em] text-brand-white">
+                  <CheckCircle className="w-4 h-4 text-brand-accent" strokeWidth={1.5} />
+                  Fixed Price Guarantee
+                </li>
+                <li className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.15em] text-brand-white">
+                  <CheckCircle className="w-4 h-4 text-brand-accent" strokeWidth={1.5} />
+                  Senior-Only Execution
+                </li>
+                <li className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.15em] text-brand-white">
+                  <CheckCircle className="w-4 h-4 text-brand-accent" strokeWidth={1.5} />
+                  No Hidden Surprises
+                </li>
+              </ul>
+              <p className="font-mono text-[9px] uppercase leading-relaxed text-brand-grey-600">
+                * This calculator provides a realistic estimate. A firm, fixed-price quote will be provided after our strategy session based on your exact specifications.
               </p>
             </div>
           </div>

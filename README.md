@@ -41,10 +41,11 @@ LevelOne Agency V3 is a complete rebuild of the agency's digital presence — re
 ```
 levelone-agency-v3/
 ├── docs/                          # Project documentation
-│   ├── PROJECT-BRIEF.md           # Master brief — all agents defer to this
-│   ├── ADR-001-stack.md           # Architecture Decision Record: stack
-│   ├── DESIGN-SYSTEM.md           # Design tokens, components, rules
-│   └── COPY-GUIDE.md              # Voice, tone, approved copy per page
+│   ├── brand/                     # Brand strategy, briefs, mission
+│   ├── design/                    # Design tokens, components, copy guide
+│   └── architecture/              # ADRs (Architecture Decision Records)
+│
+├── DESIGN.md                      # AI Design Guide (Awesome Design standard)
 │
 ├── brand/
 │   └── assets/                    # Source brand files
@@ -230,8 +231,10 @@ Contact: hello@leveloneagency.co.uk
 
 Full project documentation lives in `/docs/`:
 
-- [`PROJECT-BRIEF.md`](./docs/PROJECT-BRIEF.md) — Master brief, design direction, copy principles
-- [`ADR-001-stack.md`](./docs/ADR-001-stack.md) — Architecture decisions and rationale
-- [`DESIGN-SYSTEM.md`](./docs/DESIGN-SYSTEM.md) — Design tokens, component patterns, animation rules
-- [`COPY-GUIDE.md`](./docs/COPY-GUIDE.md) — Brand voice, approved copy, banned phrases
+- [Design Guide (`DESIGN.md`)](./DESIGN.md) — The visual brief for AI Agents.
+- [Project Brief (`docs/brand/PROJECT-BRIEF.md`)](./docs/brand/PROJECT-BRIEF.md) — Vision, mission, and UVP.
+- [Brand Strategy (`docs/brand/01-Brand-Strategy.md`)](./docs/brand/01-Brand-Strategy.md) — Strategic positioning and ICP.
+- [Design System (`docs/design/DESIGN-SYSTEM.md`)](./docs/design/DESIGN-SYSTEM.md) — Tokens, components, interaction rules.
+- [Copy Guide (`docs/design/COPY-GUIDE.md`)](./docs/design/COPY-GUIDE.md) — Voice, tone, and messaging.
+- [Architecture (`docs/architecture/ADR-001-stack.md`)](./docs/architecture/ADR-001-stack.md) — ADR: Tech stack rationale.
 - [`STATUS_PROJECT.md`](./STATUS_PROJECT.md) — Live project status and task tracker
