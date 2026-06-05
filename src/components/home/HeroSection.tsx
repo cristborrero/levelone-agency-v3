@@ -72,7 +72,7 @@ export function HeroSection() {
             headlineRef.current!.querySelector<HTMLElement>("[data-flip]");
 
           // ── Main timeline ──────────────────────────────────────────────
-          const tl = gsap.timeline({ delay: 0.25 });
+          const tl = gsap.timeline({ delay: 0.1 });
 
           // A: ScrambleText — lines 0, 1, 2 with stagger overlap
           scrambleEls.forEach((line, i) => {
@@ -92,7 +92,7 @@ export function HeroSection() {
                 },
                 ease: "none",
               },
-              i * 0.46 // each line starts 0.46s after the previous
+              i * 0.3 // each line starts 0.3s after the previous
             );
           });
 
@@ -182,7 +182,7 @@ export function HeroSection() {
       >
         {/* Overline */}
         <motion.div
-          custom={0}
+          custom={0.05}
           initial="hidden"
           animate="visible"
           variants={FADE_UP}
@@ -225,7 +225,7 @@ export function HeroSection() {
 
         {/* Sub */}
         <motion.p
-          custom={0.85}
+          custom={0.15}
           initial="hidden"
           animate="visible"
           variants={FADE_UP}
