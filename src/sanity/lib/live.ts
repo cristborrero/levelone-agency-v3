@@ -7,5 +7,4 @@ export const { sanityFetch, SanityLive } = defineLive({
     apiVersion: "2026-03-30",
   }),
   serverToken: token,
-  browserToken: token,
 });
