@@ -111,7 +111,7 @@ export const quoteSchema = z.object({
   }
 
   if (service === "digital_marketing") {
-    if ((data.marketingChannels ?? []).length === 0) {
+    if (data.marketingChannels.length === 0) {
       ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["marketingChannels"], message: "Please select at least one marketing channel" });
     }
     if (!data.adSpendBudget) {
@@ -123,7 +123,7 @@ export const quoteSchema = z.object({
   }
 
   if (service === "ai_solutions") {
-    if ((data.aiCapabilities ?? []).length === 0) {
+    if (data.aiCapabilities.length === 0) {
       ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["aiCapabilities"], message: "Please select at least one capability" });
     }
   }

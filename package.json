@@ -8,7 +8,14 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:mutation": "stryker run",
+    "test:static": "npm run type-check && npm run lint",
+    "test:integration": "playwright test tests/verify-integration.spec.ts",
+    "test:e2e": "playwright test",
+    "test:all": "npm run test && npm run test:static && npm run test:mutation"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -36,6 +43,9 @@
     "zod": "^3.23.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@stryker-mutator/core": "^8.7.1",
+    "@stryker-mutator/vitest-runner": "^8.7.1",
     "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
@@ -46,6 +56,8 @@
     "next-sitemap": "^4.2.3",
     "tailwindcss": "^4.0.0",
     "tsx": "^4.21.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^2.1.9"
   }
 }

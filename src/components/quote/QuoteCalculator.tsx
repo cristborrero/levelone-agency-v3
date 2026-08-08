@@ -127,7 +127,7 @@ const STEP_FIELDS: Record<ServiceId, Record<string, string[]>> = {
 // 4. PRICING ENGINE — one function per service, zero cross-mixing
 // ════════════════════════════════════════════════════════════════════
 
-type EstimateResult = { min: number; max: number; type: "one-off" | "retainer" };
+export type EstimateResult = { min: number; max: number; type: "one-off" | "retainer" };
 
 // ── Web Design ──
 const WD_BASE = { brochure: { min: 1200, max: 2500 }, interactive: { min: 2500, max: 4500 }, enterprise: { min: 6000, max: 15000 } };
@@ -144,7 +144,7 @@ const WD_PAGES: Record<string, { min: number; max: number }> = {
   up_to_20: { min: 600, max: 1200 }, up_to_50: { min: 1500, max: 3000 }, up_to_100: { min: 3000, max: 6000 },
 };
 
-function calcWebDesign(d: Partial<QuoteFormData>): EstimateResult {
+export function calcWebDesign(d: Partial<QuoteFormData>): EstimateResult {
   const base = d.siteType ? WD_BASE[d.siteType] : null;
   let min = base?.min ?? 0;
   let max = base?.max ?? 0;
@@ -168,7 +168,7 @@ const EC_SCALE: Record<string, { min: number; max: number }> = {
   up_to_500: { min: 1500, max: 3000 }, unlimited: { min: 3000, max: 6000 },
 };
 
-function calcEcommerce(d: Partial<QuoteFormData>): EstimateResult {
+export function calcEcommerce(d: Partial<QuoteFormData>): EstimateResult {
   const base = d.ecommercePlatform ? EC_PLATFORM[d.ecommercePlatform] : null;
   let min = base?.min ?? 0;
   let max = base?.max ?? 0;
@@ -185,7 +185,7 @@ const BI_EXTRAS: Record<string, { min: number; max: number }> = {
   pitch_deck: { min: 400, max: 900 }, stationery: { min: 200, max: 500 }, email_signature: { min: 100, max: 250 },
 };
 
-function calcBrandIdentity(d: Partial<QuoteFormData>): EstimateResult {
+export function calcBrandIdentity(d: Partial<QuoteFormData>): EstimateResult {
   const base = d.brandPackage ? BI_PACKAGES[d.brandPackage] : null;
   let min = base?.min ?? 0;
   let max = base?.max ?? 0;
@@ -201,7 +201,7 @@ const DM_CHANNELS: Record<string, { min: number; max: number }> = {
   cro: { min: 400, max: 800 }, analytics: { min: 300, max: 300 },
 };
 
-function calcDigitalMarketing(d: Partial<QuoteFormData>): EstimateResult {
+export function calcDigitalMarketing(d: Partial<QuoteFormData>): EstimateResult {
   let min = 0; let max = 0;
   (d.marketingChannels ?? []).forEach((id) => { if (DM_CHANNELS[id]) { min += DM_CHANNELS[id].min; max += DM_CHANNELS[id].max; } });
   if (d.contentNeeded === "yes")     { min += 400; max += 800; }
@@ -221,7 +221,7 @@ const AI_INTEGRATIONS: Record<string, { min: number; max: number }> = {
   api_custom: { min: 800, max: 2000 }, data_sources: { min: 600, max: 1500 }, email_platform: { min: 300, max: 700 },
 };
 
-function calcAiSolutions(d: Partial<QuoteFormData>): EstimateResult {
+export function calcAiSolutions(d: Partial<QuoteFormData>): EstimateResult {
   let min = 0; let max = 0;
   (d.aiCapabilities ?? []).forEach((id) => { if (AI_CAPS[id]) { min += AI_CAPS[id].min; max += AI_CAPS[id].max; } });
   (d.aiIntegrations ?? []).forEach((id) => { if (AI_INTEGRATIONS[id]) { min += AI_INTEGRATIONS[id].min; max += AI_INTEGRATIONS[id].max; } });
@@ -231,13 +231,13 @@ function calcAiSolutions(d: Partial<QuoteFormData>): EstimateResult {
 }
 
 // ── Full Package ──
-function calcFullPackage(d: Partial<QuoteFormData>): EstimateResult {
+export function calcFullPackage(d: Partial<QuoteFormData>): EstimateResult {
   let min = 3000; let max = 6000;
   if (d.fullPackagePriority === "simultaneous") { min += 1000; max += 2000; }
   return { min, max, type: "retainer" };
 }
 
-function calculateEstimate(d: Partial<QuoteFormData>): EstimateResult {
+export function calculateEstimate(d: Partial<QuoteFormData>): EstimateResult {
   switch (d.service) {
     case "web_design":        return calcWebDesign(d);
     case "e_commerce":        return calcEcommerce(d);
