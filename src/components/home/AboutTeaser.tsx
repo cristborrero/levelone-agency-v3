@@ -83,9 +83,9 @@ export function AboutTeaser() {
                   }}
                   className="group"
                 >
-                  <h4 className="mb-1 font-display text-sm font-bold uppercase tracking-[0.06em] text-brand-white transition-colors duration-300 group-hover:text-brand-accent">
+                  <h3 className="mb-1 font-display text-sm font-bold uppercase tracking-[0.06em] text-brand-white transition-colors duration-300 group-hover:text-brand-accent">
                     {value.name}
-                  </h4>
+                  </h3>
                   <p className="font-body text-sm text-brand-grey-500">
                     {value.desc}
                   </p>
