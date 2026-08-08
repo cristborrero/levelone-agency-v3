@@ -25,9 +25,12 @@ const securityHeaders = [
     value: "max-age=63072000; includeSubDomains; preload",
   },
   { key: "X-XSS-Protection", value: "1; mode=block" },
+  { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+  { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
 ];
 
 const nextConfig: NextConfig = {
+  compress: true,
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -38,7 +41,7 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
-    optimizePackageImports: ["lucide-react"],
+    optimizePackageImports: ["lucide-react", "motion/react", "gsap"],
   },
   async headers() {
     return [
